@@ -1,0 +1,11 @@
+// bootstrap personalization
+// https://stackoverflow.com/questions/55849635/how-to-change-the-primary-color-of-the-react-built-in-bootstrap
+
+// change the theme
+$theme-colors: (
+  "primary":  rgb(103, 26, 18),
+  "danger": #ff4136
+);
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';

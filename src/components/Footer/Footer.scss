@@ -1,0 +1,29 @@
+#main-footer{
+    padding: 0 10%;
+    padding-top:15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer{
+    #Nombre{
+        font-size: 30px;
+    }
+    #Copyright{
+        font-size: 14px;
+    }
+    #left-side{
+        width:60%;
+        margin-right: 20%;
+    }
+    #right-side{
+        width:20%
+    }
+    #links{
+        margin-bottom: 30vh;
+        a{
+            margin-right: 30px;
+        }
+    }
+}

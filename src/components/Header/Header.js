@@ -1,15 +1,14 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Image from 'react-bootstrap/Image'
+import titleImage from "../../Assets/Images/title.png";
+import "./Header.scss"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
+  <header id="mainHeader">
+    <Image id="titleImage" src={titleImage} fluid></Image>
+    {/* <div
       style={{
         margin: `0 auto`,
         maxWidth: 960,
@@ -28,6 +27,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+   */}
   </header>
 )
 
