@@ -33,7 +33,9 @@ const Footer = ({ siteTitle }) => (
             {/* <FontAwesomeIcon icon="spinner" size="6x" spin /> */}
         </p>
         <p>
-            Developed by Or
+            <a href="https://www.oscarrosete.com" style={{color:"white"}}>
+                Developed by OR
+            </a>
         </p>
     </div>
   </footer>
