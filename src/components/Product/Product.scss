@@ -1,0 +1,35 @@
+.productContainer{
+    margin-bottom: 5vh;
+    width: 32%;
+    margin-right: 2%;
+    position: relative;
+}
+
+.productContainer{
+    .img-fluid{
+        
+    }
+}
+
+.img-fluid {
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+#content{
+    // width:80%
+    padding: 0 10%;
+}
+
+.productContainer p{
+    color: black;
+    // position: absolute;
+    // text-align: center;
+    width: 100%;
+    font-size:20px;
+    top:20px;
+}
+
+.productContainer .productTitle{
+    font-weight: 600;
+}

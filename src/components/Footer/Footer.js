@@ -18,7 +18,7 @@ const Footer = ({ siteTitle }) => (
         <p id="Copyright">Copyright &copy; 2020 Rancho Grande Talabartería. All rights reserved</p>
     </div>
     <div id="right-side">
-        <p id="links" appear>
+        <p id="links">
             {/* <FontAwesomeIcon icon={faCoffee} size="1x" mr-2/> */}
             <a href="https://www.facebook.com/TRG1949" style={{color:"white"}}>             
                 <FontAwesomeIcon icon={faFacebookF} size="1x"/>

@@ -8,12 +8,18 @@ import Category from "../components/Category/Category"
 // bootstrap
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.scss'
+
 import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
 import landingImage from "../Assets/Images/leather.png";
 import logoImage from "../Assets/Images/logo.png";
+import safeImage from "../Assets/Images/Online/SafeSales.jpg"
+import warehouseImage from "../Assets/Images/Online/warehouse.jpg"
+import styleImage from "../Assets/Images/Online/style.jpg"
+
 import Button from 'react-bootstrap/Button'
 import "./index.scss"
+
 const categoryArray=
 [
   {
@@ -42,6 +48,7 @@ const categoryArray=
   }
 
 ]
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -49,9 +56,10 @@ const IndexPage = () => (
       <Image src={landingImage} fluid></Image>
       <Image id="logo-image" src={logoImage} fluid></Image>
     </div>
+
     <div id="content">
       <p className="title">Categoría</p>
-      <div class="categories-container">
+      <div id="categories-container">
         {categoryArray.map((category, index) => (
           <Category
             title={category.title}
@@ -59,19 +67,41 @@ const IndexPage = () => (
           >
           </Category>
         ))}
-      </div>
-      
+      </div>     
+     
       <Row noGutters className="justify-content-md-center" style={{marginBottom:"5vh"}}>
        <div className="col-4">
         <Button
             variant="primary"
-            href="/categories"
+            href="/products"
           >Ver más   
         </Button>
        </div>
       </Row>
+      
+      <p className="title" style={{textAlign:"center"}}>Compra en línea</p>
+    
+      <div id="online-container">
+        <div className="onlineDiv">
+          {/* <Image src={safeImage} fluid></Image> */}
+          <Image src={safeImage} className="center-cropped"/>
+          <p className="onlineTitle" >Purchase securely</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div className="onlineDiv">
+          {/* <Image src={warehouseImage} fluid></Image> */}
+          <Image src={warehouseImage} className="center-cropped"/>
+          <p className="onlineTitle">Ships from Warehouse</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div className="onlineDiv">
+          <img src={styleImage} className="center-cropped"/>
+          <p className="onlineTitle">Style your room</p>  
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+      </div>
+
     </div>
-    <p className="title" style={{textAlign:"center"}}>Compra en línea</p>
 
   </Layout>
 )
