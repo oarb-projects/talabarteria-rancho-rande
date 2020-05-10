@@ -14,3 +14,13 @@
 .img-fluid {
     width: 100%;
 }
+
+// responsive mobile
+@media only screen and (max-width: 465px)  {
+    .categoryContainer{
+        margin-bottom: 5vh;
+        width: 47%;
+        margin-right: 6%;
+        position: relative;
+    }
+}

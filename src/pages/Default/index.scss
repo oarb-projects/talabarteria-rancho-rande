@@ -61,6 +61,7 @@
     }
     margin-bottom: 5vh;
 }
+
 #categories-container .categoryContainer:nth-child(3n+3){
     // background-color: red;
     margin-right: 0;
@@ -78,3 +79,39 @@
     background-position: center center;
     background-repeat: no-repeat;
   }
+
+//   responsive mobile
+@media only screen and (max-width: 465px)  {
+    #online-container .onlineDiv{
+        margin-bottom: 5vh;
+        width: 48%;
+        margin-right: 4%;
+        .onlineTitle{
+            font-size: 14px;
+            height:30px;
+        }
+        .onlineDescription{
+            font-size: 12px;
+            text-align: justify;
+            padding: 0 2vw
+        }
+    }
+
+    .center-cropped{
+        height:200px;
+    }
+
+    #categories-container .categoryContainer:nth-child(3n+3),
+    #online-container .onlineDiv:nth-child(3n+3){
+        margin-right: 4%;
+    }
+
+    #categories-container .categoryContainer:nth-child(2n+2),
+    #online-container .onlineDiv:nth-child(2n+2){
+        margin-right: 0%;
+    }
+
+    #categories-container,#online-container{
+        // border: 1px solid red;
+    }
+}

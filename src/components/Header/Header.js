@@ -35,11 +35,15 @@ class Header extends React.Component {
             </a>
           </div>
           <div id="ImageContainer" style={{width:"40%"}}>
-            <Image id="titleImage" src={titleImage} fluid></Image>
+            <Link to="/">
+              <Image id="titleImage" src={titleImage} fluid></Image>
+            </Link>
           </div>
           <div id="iconContainer" style={{width:"30%"}}>
             <FontAwesomeIcon icon={faSearch} size="1x" style={{color:"white",marginRight:"20px"}} />
-            <FontAwesomeIcon icon={faShoppingCart} size="1x" style={{color:"white"}} />
+            <Link to="/Cart">
+              <FontAwesomeIcon icon={faShoppingCart} size="1x" style={{color:"white"}} />
+            </Link>
           </div>
         </div>
 
@@ -48,10 +52,10 @@ class Header extends React.Component {
           <div id="menu">
             <div className="menu-column">
               <div className="pageLink">
-                <Link to="/Historia/">Historia</Link>
+                <Link to="/History/">Historia</Link>
               </div>
               <div className="pageLink">             
-                <Link to="/Testimonios/">Testimonios</Link>
+                <Link to="/Reviews/">Testimonios</Link>
               </div>
               <div className="pageLink">             
                 <Link to="/Capacity/">Capacidad de Produccion</Link>
@@ -65,11 +69,11 @@ class Header extends React.Component {
                 <Link to="/Special/">Pedido Especial</Link>
               </div>
               <div className="pageLink">             
-                <Link to="/learn/">Aprende a comprar en línea</Link>
+                <Link to="/BuyExperience/">Aprende a comprar en línea</Link>
               </div>
             </div>
             <div className="menu-column">
-              <Link to="/contact/">Contacto</Link>
+              <Link to="/Contact/">Contacto</Link>
             </div>
           </div>
         </SlideDown>

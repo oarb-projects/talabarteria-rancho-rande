@@ -27,3 +27,36 @@ footer{
         }
     }
 }
+
+@media only screen and (max-width: 465px)  {
+    footer{
+        #left-side{
+            width:100%;
+            margin:0;
+            text-align: justify;
+            font-size: 14px;
+            #Nombre{
+                text-align: left;
+                font-size: 22px;
+            }
+        }
+        #right-side{
+            width:100%;
+            margin:0;
+            text-align: center;
+            #links{
+                margin-bottom:0;
+                text-align: center;
+                a{
+                    width:20%
+                }
+                a:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    #main-footer{
+        padding: 2vh 10%;
+    }
+}

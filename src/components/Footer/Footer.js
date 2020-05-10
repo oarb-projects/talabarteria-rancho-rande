@@ -32,7 +32,7 @@ const Footer = ({ siteTitle }) => (
             {/* <FontAwesomeIcon icon={faSpinner} size="2x" spin/> */}
             {/* <FontAwesomeIcon icon="spinner" size="6x" spin /> */}
         </p>
-        <p>
+        <p id="signature">
             <a href="https://www.oscarrosete.com" style={{color:"white"}}>
                 Developed by OR
             </a>

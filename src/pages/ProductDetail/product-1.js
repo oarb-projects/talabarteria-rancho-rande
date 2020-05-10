@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Product from "../components/Product/Product"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"    
+// import Product from "../../components/Product/Product"
 import "./product-detail.scss"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./product-detail.scss"
@@ -33,7 +33,10 @@ const ProductsPage = () => (
       <div id="content">
         <div id="details">
             <div id="imagesContainer">
-                <ImageGallery items={images} />
+                <ImageGallery items={images} 
+                    showPlayButton={false}
+                    showNav={false}
+                />
             </div>
             <div id="descriptionContainer">
                 <p id="title">Cinto de Piel 1</p>
