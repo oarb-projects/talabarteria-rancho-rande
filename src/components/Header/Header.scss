@@ -63,3 +63,20 @@
         color:black;
     }
 }
+
+@media only screen and (max-width: 465px)  {
+    #menu{
+        flex-wrap:wrap;
+    }
+    .menu-column{
+        width:100%;
+    }
+    #menu .menu-column:last-child{
+        width:100%;
+        a{
+            padding-left: 10vw;
+            text-align: left;
+            padding-top: 3vh;
+        }
+    }
+}
