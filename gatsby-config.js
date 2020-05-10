@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby RanchoGrande`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Talabarteria RanchoGrande`,
+    description: `La Talabarteria RanchoGrande es un negocio familiar, una tradición mexicana con más de 50 años`,
+    author: `Oscar Rosete`,
   },
   plugins: [
     `gatsby-plugin-sass`,
