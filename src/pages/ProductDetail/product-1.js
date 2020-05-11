@@ -44,7 +44,7 @@ const ProductsPage = () => (
                  cow picanha meatloaf tenderloin pork turkey. Ham landjaeger bresaola chuck
                 </p>
                 <p id="Price">Precio</p>
-                <span>{currencyFormat(1500)}</span>
+                <p>{currencyFormat(1500)}</p>
             </div>
         </div>
       </div>

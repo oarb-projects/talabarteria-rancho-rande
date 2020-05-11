@@ -32,3 +32,28 @@
         text-align: justify;
     }
 }
+
+@media only screen and (max-width: 465px)  {
+    #imagesContainer,#descriptionContainer{
+        width:100%;
+    }
+    #details{
+        display: flex;
+        // margin-bottom: 10vh;
+        // margin-top: 10vh;
+        flex-wrap: wrap;
+    }
+    #descriptionContainer{
+        padding: 0;
+        p{
+            text-align: right;
+            width: 100%;
+        }
+        #title{
+            text-align: center;
+        }
+    }
+    // #Price{
+    //     text-align: right;
+    // }
+}
