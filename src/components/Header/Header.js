@@ -66,7 +66,7 @@ class Header extends React.Component {
                 <Link to="/Policies/">Políticas de empresa</Link>
               </div>
               <div className="pageLink">             
-                <Link to="/Special/">Pedido Especial</Link>
+                <Link to="/Special/" style={{textDecoration:"underline",fontWeight:"bold"}}>Pedido Especial</Link>
               </div>
               <div className="pageLink">             
                 <Link to="/BuyExperience/">Aprende a comprar en línea</Link>
