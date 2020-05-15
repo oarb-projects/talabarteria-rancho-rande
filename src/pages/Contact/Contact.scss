@@ -1,5 +1,18 @@
-.title{
+body{
+    p{
+        color:black
+    }
+}
+h1.lang{
+    text-align: center;
+    padding-bottom: 1.5rem;
     font-size: 30px;
+}
+h1.text-center{
+    font-size: 30px;
+}
+.title{
+    font-size: 50px;
     color: black;
     font-weight: bolder;
     width: 100%;
@@ -14,5 +27,30 @@
 @media only screen and (max-width: 465px)  {
     .title{
         margin-top: 3vh;
+    }
+}
+
+
+/*map related css*/
+.mapouter {
+    text-align: right;
+    height: 100%;
+    width: 100%;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 100%;
+    width: 100%;
+}
+
+.mapouter{
+    margin:0 auto
+}
+
+.text-center{
+    p{
+        font-size: 20px;
     }
 }
