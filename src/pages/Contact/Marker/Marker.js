@@ -1,5 +1,5 @@
 import React from "react"
-import "./marker.css"
+import "./Marker.css"
 class Marker extends React.Component{
     handleclick=()=>{
         this.props.handleClick(this.props.stadium)
