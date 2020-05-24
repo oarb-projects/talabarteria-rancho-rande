@@ -153,7 +153,7 @@ class Product extends React.Component{
                         <p className="cart-tag">{this.state.cartqty} in cart</p>
 
                     } 
-                    {this.state.hoverState && 
+                    {/* {this.state.hoverState && 
                         <div className="productForm">
                             <div className="qty">
                                 <div className="signs" onClick={this.handleDecrement.bind(this)}>
@@ -168,7 +168,21 @@ class Product extends React.Component{
                             </div>
                             <Button variant="primary" block size="xs" data-id={this.state.id} onClick={this.handleClick}>Buy</Button>
                         </div>
-                    }
+                    } */}
+                    <div className="productForm">
+                            <div className="qty">
+                                <div className="signs" onClick={this.handleDecrement.bind(this)}>
+                                    <p>-</p>
+                                </div>
+                                <div className="qtyinbox">
+                                    <p>{this.state.qty} </p>
+                                </div>
+                                <div className="signs" onClick={this.handleIncrement.bind(this)}>
+                                    <p>+</p>
+                                </div>           
+                            </div>
+                        <Button variant="primary" block size="xs" data-id={this.state.id} onClick={this.handleClick}>Buy</Button>
+                    </div>
                 </div>
         );
     }

@@ -59,8 +59,10 @@ class cartPage extends React.Component{
       <Layout>
         <SEO title="Cart Page" />
         <div id="content">
-            <p className="title">Carrito de compras</p>
-            <div id="product-container">
+              <div id="page-header">
+                <h1>Carrito de Compras</h1>
+              </div>
+              <div id="product-container">
               <p id="imageTitle">Producto</p>
               <p id="quantityTitle">Cantidad</p>
               <p id="priceimageTitle">Precio</p>
