@@ -19,6 +19,7 @@ class Product extends React.Component{
             cartqty:0,
             title:this.props.title,
             cost:this.props.cost,
+            img:this.props.img,
             hoverState:false,
             id:this.props.id
         };
@@ -143,7 +144,7 @@ class Product extends React.Component{
             >   
                 <div className="imageContainer">
                         <Link to={this.props.url}>
-                            <Image src={this.props.img} fluid></Image>
+                            <Image src={this.state.img} fluid></Image>
                         </Link>
                     </div>
                     <p className="productTitle">{this.state.title}</p>
