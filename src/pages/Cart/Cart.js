@@ -39,9 +39,20 @@ class cartPage extends React.Component{
     super(props);
     this.state = {
         qty:0,
+        productArray:[]
     };
   }
 
+  componentDidMount=()=>{
+    if(localStorage.getItem('cart')){
+      // console.log(this.state.id)
+      let arr=JSON.parse(localStorage.getItem('cart'));
+      console.log(arr.length)
+      this.setState({
+        productArray:arr
+      })
+    }
+  }
 // const ProductsPage = () => (
   render() {
     return (
@@ -55,7 +66,7 @@ class cartPage extends React.Component{
               <p id="priceimageTitle">Precio</p>
               <p id="subtotalTitle">Subtotal</p>
               <hr id="cart"></hr>
-                {productArray.map((product, index) => (
+                {this.state.productArray.map((product, index) => (
                   <Product
                     title={product.title}
                     img={product.img}
