@@ -17,7 +17,8 @@ class Product extends React.Component{
             cartqty:0,
             title:this.props.title,
             cost:this.props.cost,
-            id:this.props.id
+            id:this.props.id,
+            subtotal:0
         };
     }
 
@@ -32,8 +33,12 @@ class Product extends React.Component{
                 console.log("found")
                 let productToModify=arr[productLocation]
                 console.log(productToModify)
+                // console.log("====subtotal")
+                let subtotal=productToModify.qty*productToModify.cost
+                // console.log(subtotal)
                 this.setState({
-                    cartqty: productToModify.qty
+                    cartqty: productToModify.qty,
+                    subtotal:subtotal
                 })
             }
         }
@@ -92,9 +97,11 @@ class Product extends React.Component{
     }
 
     handleIncrement=()=>{
+        // let subtotal=cost*this.state.cartqty
         this.setState((state)=>{
             return{
-                cartqty:state.cartqty+1
+                cartqty:state.cartqty+1,
+                subtotal:state.cost*(state.cartqty+1)
             }
         });
     }
@@ -102,7 +109,8 @@ class Product extends React.Component{
     handleDecrement(){
         this.setState((state)=>{
             return{
-                cartqty:state.cartqty-1>-1? this.state.cartqty-1 : 0
+                cartqty:state.cartqty-1>-1? this.state.cartqty-1 : 0,
+                subtotal:state.cost*(state.cartqty-1>-1? this.state.cartqty-1 : 0)
             }
         });
     }
@@ -153,7 +161,7 @@ class Product extends React.Component{
                         <p className="price"><span className="mobileLabel">Precio: </span>{this.currencyFormat(this.state.cost)}</p>
                     </div>
                     <div className="subtotalContainer">
-                        <p className="subtotal"><span className="mobileLabel">Subtotal:</span>{this.currencyFormat(this.state.cost)}</p>
+                        <p className="subtotal"><span className="mobileLabel">Subtotal:</span>{this.currencyFormat(this.state.subtotal)}</p>
                     </div>
 
                 </div>
