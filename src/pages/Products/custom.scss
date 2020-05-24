@@ -1,0 +1,9 @@
+// bootstrap personalization
+//https://stackoverflow.com/questions/51928722/how-to-override-bootstrap-theme-colors-in-bootstrapped-react-redux-app/51929114
+
+$primary: rgb(103, 26, 18);
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap';
+@import "./products.scss"
+
+

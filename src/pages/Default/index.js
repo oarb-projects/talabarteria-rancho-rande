@@ -5,8 +5,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Category from "../../components/Category/Category"
 
-// bootstrap
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import ControlledCarousel from "../../components/Caroussel/Caroussel"
 import './custom.scss'
 
 import Row from 'react-bootstrap/Row'
@@ -16,6 +15,10 @@ import logoImage from "../../Assets/Images/logo.png";
 import safeImage from "../../Assets/Images/Online/SafeSales.jpg"
 import warehouseImage from "../../Assets/Images/Online/warehouse.jpg"
 import styleImage from "../../Assets/Images/Online/style.jpg"
+import tb1 from "../../Assets/Images/Banners/talabartero1.jpg";
+import tb2 from "../../Assets/Images/Banners/talabartero2.jpg"
+import tb3 from "../../Assets/Images/Banners/talabartero3.jpg"
+import tb4 from "../../Assets/Images/Banners/talabartero4.jpg"
 
 import Button from 'react-bootstrap/Button'
 import "./index.scss"
@@ -48,15 +51,39 @@ const categoryArray=
   }
 
 ]
+const imgArray=[
+  {
+    imgSrc:landingImage,
+    title:'Recoge tu pedido en tienda',
+    subtitle:'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+  },
+  {
+    imgSrc:tb2,
+    title:'Compra en línea 100% confiables',
+    subtitle:'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+  },
+  {
+    imgSrc:tb3,
+    title:'Third Slide Label',
+    subtitle:'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+  },
+  {
+    imgSrc:tb1,
+    title:'Fourth Slide Label',
+    subtitle:'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+  }
+]
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div style={{position:"relative"}}>
+    {/* <div style={{position:"relative"}}>
       <Image src={landingImage} fluid></Image>
       <Image id="logo-image" src={logoImage} fluid></Image>
-    </div>
-
+    </div> */}
+    <ControlledCarousel
+      imgArray={imgArray}
+    />
     <div id="content">
       <p className="title">Categoría</p>
       <div id="categories-container">
@@ -64,23 +91,24 @@ const IndexPage = () => (
           <Category
             title={category.title}
             img={category.img}
+            key={index}
           >
           </Category>
         ))}
-      </div>     
-     
+      </div>
+
       <Row noGutters className="justify-content-center" style={{marginBottom:"5vh"}}>
        <div className="col-4">
         <Button
             variant="primary"
             href="/products"
-          >Ver más   
+          >Ver más
         </Button>
        </div>
       </Row>
-      
+
       <p className="title" style={{textAlign:"center"}}>Compra en línea</p>
-    
+
       <div id="online-container">
         <div className="onlineDiv">
           {/* <Image src={safeImage} fluid></Image> */}
@@ -96,7 +124,7 @@ const IndexPage = () => (
         </div>
         <div className="onlineDiv">
           <img src={styleImage} className="center-cropped"/>
-          <p className="onlineTitle">Style your room</p>  
+          <p className="onlineTitle">Style your room</p>
           <p className="onlineDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
       </div>

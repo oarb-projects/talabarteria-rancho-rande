@@ -1,16 +1,25 @@
 .productContainer{
     margin-bottom: 5vh;
-    width: 32%;
+    width: 23.5%;
     margin-right: 2%;
     position: relative;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .productContainer{
-    .img-fluid{
-        
+    .price{
+        // margin-left: 20px;
+        font-size:16px;
     }
 }
-
+.imageContainer{
+    padding: 2px;
+    width: 100%;
+}
 .img-fluid {
     width: 100%;
     margin-bottom: 2vh;
@@ -23,8 +32,6 @@
 
 .productContainer p{
     color: black;
-    // position: absolute;
-    // text-align: center;
     width: 100%;
     font-size:20px;
     top:20px;
@@ -32,6 +39,7 @@
 
 .productContainer .productTitle{
     font-weight: 600;
+    // margin-left: 20px;
 }
 
 @media only screen and (max-width: 465px)  {
@@ -47,4 +55,62 @@
     .productContainer p {
         font-size: 16px;
     }  
+}
+.active{
+    // background-color: red;
+    display: flex;
+    border: 1px solid black;
+    z-index: 200;
+    inset:769.567px auto auto 161.333px;
+    // -webkit-border-radius: 20px;
+    // -moz-border-radius: 20px;
+    // border-radius: 20px;
+    .productForm{
+        display: flex;
+        width: 100%;
+    }
+    .productTitle{
+        cursor:pointer;
+    }
+}
+.productForm{
+    // display: flex;
+    // height:30px;
+    display: none;
+    .qty{
+        width: 40%;
+        display:flex;
+        height: 40px;
+        input{
+            width: 100%;
+        }
+        .qtyinbox{
+            width: 60%;
+            input{
+                height:40px;
+                border: 1px solid black;
+                text-align: center;
+                border-bottom: 0;
+
+            }
+        }
+        .signs{
+            width: 20%;
+            border: 1px solid black;
+            border-bottom: 0;
+            text-align: center;
+            cursor: pointer;
+            font-size: 25px;
+        }
+    }
+    button{
+        width: 60%;
+        height:40px;
+        border-radius: 0;
+    }
+}
+.productContainer .cart-tag{
+    background-color: #e7c264;;
+    color: white;
+    width: 100%;
 }

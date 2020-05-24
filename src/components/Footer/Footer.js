@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import './Footer.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,faSpinner } from '@fortawesome/free-solid-svg-icons'
 import {faFacebookF,faWhatsapp,faTwitter} from '@fortawesome/free-brands-svg-icons'
 const Footer = ({ siteTitle }) => (
   <footer  id="main-footer"
@@ -21,13 +19,13 @@ const Footer = ({ siteTitle }) => (
         <p id="links">
             {/* <FontAwesomeIcon icon={faCoffee} size="1x" mr-2/> */}
             <a href="https://www.facebook.com/TRG1949" style={{color:"white"}}>             
-                <FontAwesomeIcon icon={faFacebookF} size="1x"/>
+                <FontAwesomeIcon icon={faFacebookF} size="2x"/>
             </a>
             <a href="https://www.facebook.com/TRG1949" style={{color:"white"}}>
-                <FontAwesomeIcon icon={faWhatsapp}size="1x"/>             
+                <FontAwesomeIcon icon={faWhatsapp}size="2x"/>             
             </a>
             <a href="https://www.facebook.com/TRG1949" style={{color:"white"}}>
-                <FontAwesomeIcon icon={faTwitter} size="1x"/>
+                <FontAwesomeIcon icon={faTwitter} size="2x"/>
             </a>
             {/* <FontAwesomeIcon icon={faSpinner} size="2x" spin/> */}
             {/* <FontAwesomeIcon icon="spinner" size="6x" spin /> */}

@@ -7,13 +7,17 @@ import Collapse from 'react-bootstrap/Collapse'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars, faSearch,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {SlideDown} from 'react-slidedown'
+import Badge from 'react-bootstrap/Badge'
 import 'react-slidedown/lib/slidedown.css'
 import "./Header.scss"
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {openMenu: true};
+    this.state = {
+      openMenu: true,
+      itemsInCart:0
+    };
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
   }
@@ -31,7 +35,7 @@ class Header extends React.Component {
         <div id="navbar" style={{width:"100%"}}>
           <div id="hamContainer" style={{width:"30%"}}>
             <a onClick={this.handleClick}>
-              <FontAwesomeIcon icon={faBars} size="1x" style={{color:"white",marginRight:"20px"}} />
+              <FontAwesomeIcon icon={faBars} size="2x" style={{color:"white",marginRight:"20px"}} />
             </a>
           </div>
           <div id="ImageContainer" style={{width:"40%"}}>
@@ -40,10 +44,11 @@ class Header extends React.Component {
             </Link>
           </div>
           <div id="iconContainer" style={{width:"30%"}}>
-            <FontAwesomeIcon icon={faSearch} size="1x" style={{color:"white",marginRight:"20px"}} />
+            <FontAwesomeIcon icon={faSearch} size="2x" style={{color:"white",marginRight:"20px"}} />
             <Link to="/Cart">
-              <FontAwesomeIcon icon={faShoppingCart} size="1x" style={{color:"white"}} />
+              <FontAwesomeIcon icon={faShoppingCart} size="2x" style={{color:"white"}} />
             </Link>
+            <Badge className="ml-2" variant="light">{this.state.itemsInCart}</Badge>
           </div>
         </div>
 
