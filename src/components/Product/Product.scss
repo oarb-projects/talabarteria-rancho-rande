@@ -56,48 +56,55 @@
         font-size: 16px;
     }  
 }
-.active{
-    // background-color: red;
-    display: flex;
-    border: 1px solid black;
-    z-index: 200;
-    inset:769.567px auto auto 161.333px;
-    // -webkit-border-radius: 20px;
-    // -moz-border-radius: 20px;
-    // border-radius: 20px;
-    .productForm{
-        display: flex;
-        width: 100%;
-    }
-    .productTitle{
-        cursor:pointer;
-    }
-}
+// .active{
+//     // background-color: red;
+//     display: flex;
+//     border: 1px solid black;
+//     z-index: 200;
+//     inset:769.567px auto auto 161.333px;
+//     // -webkit-border-radius: 20px;
+//     // -moz-border-radius: 20px;
+//     // border-radius: 20px;
+//     .productForm{
+//         display: flex;
+//         width: 100%;
+//     }
+//     .productTitle{
+//         cursor:pointer;
+//     }
+// }
+
 .productForm{
-    // display: flex;
+    display: flex;
+    width: 100%;
+    align-content: center;
     // height:30px;
-    display: none;
+    // display: none;
     .qty{
         width: 40%;
         display:flex;
         height: 40px;
+        line-height: 40px;
+        user-select: none;
         input{
             width: 100%;
         }
         .qtyinbox{
-            width: 60%;
-            input{
+            width: 50%;
+            p{
                 height:40px;
                 border: 1px solid black;
                 text-align: center;
-                border-bottom: 0;
+                border-left: 0;
+                border-right: 0;
+                // border-bottom: 0;
 
             }
         }
         .signs{
-            width: 20%;
+            width: 25%;
             border: 1px solid black;
-            border-bottom: 0;
+            // border-bottom: 0;
             text-align: center;
             cursor: pointer;
             font-size: 25px;

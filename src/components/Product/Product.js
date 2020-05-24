@@ -15,12 +15,11 @@ class Product extends React.Component{
         // this.handleIncrement = this.handleClick.bind(this);
         // this.handleClick = this.handleClick.bind(this);
         this.state = {
-            isToggleOn: true,
             qty:this.props.qty?this.props.qty:0,
             cartqty:0,
             title:this.props.title,
             cost:this.props.cost,
-            hoverState:"productContainer",
+            hoverState:false,
             id:this.props.id
         };
         // this.handleIncrement = this.handleClick.bind(this);
@@ -121,50 +120,53 @@ class Product extends React.Component{
         });
     }
     hoverHandler=()=>{
-        // console.log(this.state)
+        console.log(this.state)
         this.setState({
-            hoverState:'productContainer active'
+            // hoverState:'productContainer active'
+            hoverState:true 
         })
     }
     hoverExitHandler=()=>{
         // console.log(this.state)
         this.setState({
-            hoverState:'productContainer'
+            // hoverState:'productContainer active'
+            hoverState:false 
         })
     }
     render() {
         return (
-            <div  className={this.state.hoverState}
-            onMouseEnter={this.hoverHandler.bind(this)}
-            onMouseLeave={this.hoverExitHandler.bind(this)}
+            <div  className='productContainer' 
+                onMouseEnter={this.hoverHandler.bind(this)}
+                onMouseLeave={this.hoverExitHandler.bind(this)}
             >   
-            <div className="imageContainer">
-                <Link to={this.props.url}>
-                    <Image src={this.props.img} fluid></Image>
-                </Link>
-            </div>
-                <p className="productTitle">{this.state.title}</p>
-                <p className="price">{this.currencyFormat(this.state.cost)}</p>
-                {this.state.cartqty>0 &&
-                    <p className="cart-tag">{this.state.cartqty} in cart</p>
-
-                } 
-                <div className="productForm">
-                    <div className="qty">
-                        <div className="signs" onClick={this.handleDecrement.bind(this)}>
-                        -
-                        </div>
-                        <div className="qtyinbox">
-                            <input type="text" name="Quantity" className="product-quantity-input textfield"
-                             value={this.state.qty}  onChange={this.changeHandler.bind(this, "Quantity")} />
-                        </div>
-                        <div className="signs" onClick={this.handleIncrement.bind(this)}>
-                        +
-                        </div>           
+                <div className="imageContainer">
+                        <Link to={this.props.url}>
+                            <Image src={this.props.img} fluid></Image>
+                        </Link>
                     </div>
-                    <Button variant="primary" block size="xs" data-id={this.state.id} onClick={this.handleClick}>Buy</Button>
+                    <p className="productTitle">{this.state.title}</p>
+                    <p className="price">{this.currencyFormat(this.state.cost)}</p>
+                    {this.state.cartqty>0 &&
+                        <p className="cart-tag">{this.state.cartqty} in cart</p>
+
+                    } 
+                    {this.state.hoverState && 
+                        <div className="productForm">
+                            <div className="qty">
+                                <div className="signs" onClick={this.handleDecrement.bind(this)}>
+                                    <p>-</p>
+                                </div>
+                                <div className="qtyinbox">
+                                    <p>{this.state.qty} </p>
+                                </div>
+                                <div className="signs" onClick={this.handleIncrement.bind(this)}>
+                                    <p>+</p>
+                                </div>           
+                            </div>
+                            <Button variant="primary" block size="xs" data-id={this.state.id} onClick={this.handleClick}>Buy</Button>
+                        </div>
+                    }
                 </div>
-            </div>
         );
     }
     
