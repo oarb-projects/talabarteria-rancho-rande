@@ -17,10 +17,12 @@
 
 #hamContainer{
     padding-left: 10%;
+    width:30%;
 }
 
 #ImageContainer{
     text-align: center;
+    width:40%
 }
 
 #titleImage{
@@ -31,7 +33,9 @@
 #iconContainer{
     padding-right: 15%;
     text-align: right;
+    width:30%;
 }
+
 #menu{
     background-color: #F6F6F6;
     display: flex;
@@ -67,6 +71,9 @@
 }
 
 @media only screen and (max-width: 465px)  {
+    #hamContainer{
+        padding-left: 10%;
+    }
     #menu{
         flex-wrap:wrap;
     }
@@ -80,5 +87,26 @@
             text-align: left;
             padding-top: 3vh;
         }
+    }
+    #hamContainer{
+        width:20%;
+    }
+    
+    #ImageContainer{
+        text-align: center;
+        width:50%;
+        #titleImage{
+            width:90%;
+        }
+    }
+    
+    // #titleImage{
+    //     width: 70%;
+    //     margin-bottom: 0;
+    // }
+    
+    #iconContainer{
+        padding-right: 5%;
+        text-align: right;
     }
 }

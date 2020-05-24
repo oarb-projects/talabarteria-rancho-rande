@@ -45,17 +45,17 @@ class Header extends React.Component {
     return(
       <header id="mainHeader">
         <div id="navbar" style={{width:"100%"}}>
-          <div id="hamContainer" style={{width:"30%"}}>
+          <div id="hamContainer">
             <a onClick={this.handleClick}>
               <FontAwesomeIcon icon={faBars} size="2x" style={{color:"white",marginRight:"20px"}} />
             </a>
           </div>
-          <div id="ImageContainer" style={{width:"40%"}}>
+          <div id="ImageContainer">
             <Link to="/">
               <Image id="titleImage" src={titleImage} fluid></Image>
             </Link>
           </div>
-          <div id="iconContainer" style={{width:"30%"}}>
+          <div id="iconContainer" >
             <FontAwesomeIcon icon={faSearch} size="2x" style={{color:"white",marginRight:"20px"}} />
             <Link to="/Cart">
               <FontAwesomeIcon icon={faShoppingCart} size="2x" style={{color:"white"}} />
