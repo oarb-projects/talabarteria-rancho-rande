@@ -56,7 +56,7 @@ class Header extends React.Component {
             </Link>
           </div>
           <div id="iconContainer" >
-            <FontAwesomeIcon icon={faSearch} size="2x" style={{color:"white",marginRight:"20px"}} />
+            <FontAwesomeIcon id="search" icon={faSearch} size="2x" style={{color:"white",marginRight:"20px"}} />
             <Link to="/Cart">
               <FontAwesomeIcon icon={faShoppingCart} size="2x" style={{color:"white"}} />
             </Link>

@@ -72,7 +72,7 @@
 
 @media only screen and (max-width: 465px)  {
     #hamContainer{
-        padding-left: 10%;
+        padding-left: 5%;
     }
     #menu{
         flex-wrap:wrap;
@@ -94,10 +94,11 @@
     
     #ImageContainer{
         text-align: center;
-        width:50%;
+        width:60%;
         #titleImage{
             width:90%;
         }
+
     }
     
     // #titleImage{
@@ -108,5 +109,9 @@
     #iconContainer{
         padding-right: 5%;
         text-align: right;
+        width: 20%;
+        #search{
+            display: none;
+        }
     }
 }
