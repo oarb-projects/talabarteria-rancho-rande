@@ -123,7 +123,7 @@ class Product extends React.Component{
                 <div  className='cartProductContainer'>   
                     <div className="imageContainer">
                             <Link to={this.props.url}>
-                                <Image src={this.props.img} fluid></Image>
+                                <Image src={this.props.img}></Image>
                             </Link>
                         </div>
                     <div className="productContent">
