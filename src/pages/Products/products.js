@@ -111,7 +111,7 @@ class ProductsPage extends React.Component{
 // const ProductsPage = () => (
   render() {
     return (
-        <Layout qty={this.state.qty}>
+      <Layout qty={this.state.qty}>
         <SEO title="Products Page" />
         <div id="content">
           <div id="page-header">

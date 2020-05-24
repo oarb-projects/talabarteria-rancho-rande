@@ -16,3 +16,35 @@
         margin-top: 3vh;
     }
 }
+#product-container{
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    text-align:center;
+}
+#imageTitle{
+    width: 20%;
+    margin-right: 20%;
+}
+#quantityTitle{
+    width: 20%;
+
+}
+#priceimageTitle{
+    width: 20%;
+
+}
+#subtotalTitle{
+    width: 20%;
+
+}
+hr#cart{
+    border-top: 1px solid #e2e2e2;
+    width: 100%;
+}
+
+@media only screen and (max-width: 465px)  {
+    #imageTitle,#quantityTitle,#subtotalTitle,#priceimageTitle{
+        display:none
+    }
+}

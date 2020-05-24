@@ -29,6 +29,18 @@ class Header extends React.Component {
       openMenu: !state.openMenu
     }));
   }
+
+  componentDidMount() {
+    console.log("====mounted header")
+    if(localStorage.getItem('cart')){
+        // console.log(this.state.id)
+        let arr=JSON.parse(localStorage.getItem('cart'));
+        console.log(arr.length)
+        this.setState({
+          itemsInCart:arr.length
+        })
+    }
+  }
   render() {
     return(
       <header id="mainHeader">
