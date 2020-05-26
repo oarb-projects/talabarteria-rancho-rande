@@ -18,7 +18,7 @@ class ProductsPage  extends Component {
       lat: 30.628221,
       lng: -110.9685844
     },
-    zoom: 18
+    zoom: 19
   };
 
   selectMarker  =()=>{
@@ -30,6 +30,17 @@ class ProductsPage  extends Component {
  
   sendEmail=()=>{
     console.log("===sending Email")
+  }
+
+  createMapOptions= (maps)=> {
+    return {
+      streetViewControl: true,
+      rotateControl: true,
+      panControl: false,
+      mapTypeControl: true,
+      scrollwheel: false,
+      styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 0.8 }, { 'lightness': 4 }, { 'visibility': 'on' }] }]
+    }
   }
   
   render(){
@@ -116,6 +127,7 @@ class ProductsPage  extends Component {
                 bootstrapURLKeys={{ key: 'AIzaSyC_UHx7jUrV6Hg4pNClBxpGywg3v4ovcfs' }}
                 defaultCenter={this.props.center}
                 defaultZoom={this.props.zoom}
+                options={this.createMapOptions}
               > 
               <AnyReactComponent
                 lat={this.props.center.lat}

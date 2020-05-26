@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
+import Swal from 'sweetalert2'
 import "./CartProduct.scss"
 
 
@@ -47,7 +48,6 @@ class Product extends React.Component{
         // this.setState({ user, rememberMe });
     }
  
-    
     handleClick=()=>{
         // localStorage.removeItem('cart');
         // console.log("Adding to Cart")
@@ -117,12 +117,55 @@ class Product extends React.Component{
 
     handleUpdate(){
         console.log("updating")
-        console.log(this.state)
+        if(localStorage.getItem('cart')){
+            let arr=JSON.parse(localStorage.getItem('cart'));
+            console.log(this.state)
+            var productLocation = arr.findIndex(product => product.id === this.state.id);
+            if(productLocation === -1){
+
+            }
+            else{
+                console.log(arr[productLocation])
+                console.log(this.state.cartqty)
+                arr[productLocation].qty=this.state.cartqty
+                localStorage.setItem('cart',JSON.stringify(arr))
+            }
+        }
     }
 
     handleRemove(){
         console.log("removing")
-        console.log(this.state)
+        if(localStorage.getItem('cart')){
+            let arr=JSON.parse(localStorage.getItem('cart'));
+            console.log(this.state)
+            var productLocation = arr.findIndex(product => product.id === this.state.id);
+            if(productLocation === -1){
+
+            }
+            else{
+                Swal.fire({
+                    title: '¿Está seguro de eliminar?',
+                    // text: 'User will have Admin Privileges',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33', 
+                    confirmButtonText: 'Si!',
+                    cancelButtonText: 'No!'
+                 }).then((result) => {
+                    if(result.value){
+                        //  this.props.submitUser(this.state)
+                        console.log("removed")
+                        console.log(arr[productLocation])
+                        arr.splice(productLocation, 1);
+                        localStorage.setItem('cart',JSON.stringify(arr))
+                        // console.log(this.state.cartqty)
+                        // arr[productLocation].qty=this.state.cartqty
+                        // localStorage.setItem('cart',JSON.stringify(arr))
+                   }
+                 })
+            }
+        }
     }
 
     render() {

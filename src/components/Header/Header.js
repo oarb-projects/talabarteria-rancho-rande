@@ -71,9 +71,9 @@ class Header extends React.Component {
               <div className="pageLink">
                 <Link to="/History/">Historia</Link>
               </div>
-              <div className="pageLink">             
+              {/* <div className="pageLink">             
                 <Link to="/Reviews/">Testimonios</Link>
-              </div>
+              </div> */}
               <div className="pageLink">             
                 <Link to="/Capacity/">Capacidad de Produccion</Link>
               </div>
@@ -85,9 +85,9 @@ class Header extends React.Component {
               <div className="pageLink">             
                 <Link to="/Special/" style={{textDecoration:"underline",fontWeight:"bold"}}>Pedido Especial</Link>
               </div>
-              <div className="pageLink">             
+              {/* <div className="pageLink">             
                 <Link to="/BuyExperience/">Aprende a comprar en línea</Link>
-              </div>
+              </div> */}
             </div>
             <div className="menu-column">
               <Link to="/Contact/">Contacto</Link>

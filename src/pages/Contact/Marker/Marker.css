@@ -4,6 +4,7 @@
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
+    transform: translate(-50%, -50%);
  }
  .marker.selected{
     background-color: yellow;
