@@ -30,10 +30,6 @@ const productArray=
     url:"/product-3"
   },
 ]
-function updateCounter(data){
-  // console.log("here i am")
-  // console.log(data)
-}
 class cartPage extends React.Component{
   constructor(props) {
     super(props);
@@ -44,17 +40,35 @@ class cartPage extends React.Component{
   }
 
   componentDidMount=()=>{
+    console.log("updating cart")
     if(localStorage.getItem('cart')){
       // console.log(this.state.id)
       let arr=JSON.parse(localStorage.getItem('cart'));
-      console.log(arr.length)
+      // console.log(arr.length)
       this.setState({
         productArray:arr
       })
     }
   }
+  
+  remove_product_on_cart =(deleteProductId)=>{
+    console.log("here i am")
+    console.log(deleteProductId)
+    console.log("====the real removal")
+    let newarr=this.state.productArray.filter(product => product.id != deleteProductId)
+    console.log(newarr)
+    // console.log(state.productArray[data])
+    // let arr = [...this.state.productArray]; // make a separate copy of the array
+    // console.log(arr)
+    // arr.splice(deleteProductId, 1);
+    this.setState({
+      productArray:newarr
+    })
+  }
 // const ProductsPage = () => (
   render() {
+    console.log("======rendering")
+    console.log(this.state.productArray)
     return (
       <Layout>
         <SEO title="Cart Page" />
@@ -75,8 +89,8 @@ class cartPage extends React.Component{
                     cost={product.cost}
                     url={product.url}
                     id={product.id}
-                    key={index}
-                    newFunction={updateCounter}
+                    key={product.id}
+                    newFunction={this.remove_product_on_cart.bind(this)}
                   >
                   </Product>
                 ))}

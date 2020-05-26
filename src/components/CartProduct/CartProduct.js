@@ -159,6 +159,7 @@ class Product extends React.Component{
                         console.log(arr[productLocation])
                         arr.splice(productLocation, 1);
                         localStorage.setItem('cart',JSON.stringify(arr))
+                        this.props.newFunction(this.state.id);
                         // console.log(this.state.cartqty)
                         // arr[productLocation].qty=this.state.cartqty
                         // localStorage.setItem('cart',JSON.stringify(arr))
