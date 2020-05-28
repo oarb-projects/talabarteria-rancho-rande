@@ -12,7 +12,17 @@ import "./Contact.scss"
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 
-class ProductsPage  extends Component {
+class ContactPage  extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        qty:0,
+        name:"",
+        email:"",
+        phone:"",
+        message:""
+    };
+  }
   static defaultProps = {
     center: {
       lat: 30.628221,
@@ -42,7 +52,37 @@ class ProductsPage  extends Component {
       styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 0.8 }, { 'lightness': 4 }, { 'visibility': 'on' }] }]
     }
   }
-  
+
+  changeHandler = (event) => {
+    this.setState({
+        [event.target.name]: event.target.value
+    });
+  }
+
+  sendEmail=(e)=>{
+    e.preventDefault();
+    console.log("nuevo correo")
+    // const data = { username: 'example' };
+    let data={...this.state}
+    delete data.qty;  // or delete person["age"];
+    console.log(data)
+    let newUrl= 'http://localhost:3000/data'
+    fetch(newUrl, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
   render(){
     return(
       <Layout>
@@ -62,17 +102,17 @@ class ProductsPage  extends Component {
                         </div>
                           <form className="contact_us_form row" method="post" id="contactForm" onSubmit={this.sendEmail}>
                             <div className="form-group col-lg-12">
-                              <input type="text" className="form-control lang-placeholder" id="name" name="name" placeholder="Nombre" required key="name"/>
+                              <input type="text" className="form-control lang-placeholder" id="name" name="name" placeholder="Nombre" required key="name" onChange={this.changeHandler.bind(this)} value={this.state.name}/>
                             </div>
                             <div className="form-group col-lg-12">
-                              <input type="email" className="form-control lang-placeholder" id="email" name="email" placeholder="Correo electrónico" required key="email"/>
+                              <input type="email" className="form-control lang-placeholder" id="email" name="email" placeholder="Correo electrónico" required key="email" onChange={this.changeHandler.bind(this)} value={this.state.email}/>
                             </div>
                             <div className="form-group col-lg-12">
-                              <input type="text" className="form-control lang-placeholder" id="phone" name="phone" placeholder="Teléfono" required key="phone"/>
+                              <input type="text" className="form-control lang-placeholder" id="phone" name="phone" placeholder="Teléfono" required key="phone" onChange={this.changeHandler.bind(this)} value={this.state.phone}/>
                             </div>
                             <div className="form-group col-lg-12">
                               <textarea className="form-control lang-placeholder" name="message" id="message" rows="3"
-                              placeholder="Mensaje" required key="msg"></textarea>
+                              placeholder="Mensaje" required key="msg" onChange={this.changeHandler.bind(this)} value={this.state.message}></textarea>
                             </div>
                             <div className="form-group col-md-12">
                               <button type="submit" value="submit" className="btn btn-dark lang" key="send-btn">Enviar
@@ -180,5 +220,5 @@ class ProductsPage  extends Component {
 }
 
   
-  export default ProductsPage
+  export default ContactPage
   
