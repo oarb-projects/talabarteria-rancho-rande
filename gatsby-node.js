@@ -7,9 +7,10 @@
 // You can delete this file if you're not using it
 const path=require ('path');
 // const {createPage}=boundActionCreators;
+// import { graphql } from 'gatsby';
 
-exports.createPages=({boundActionCreators,graphql})=>{
-    const {createPage}=boundActionCreators;
+exports.createPages=async ({actions,graphql})=>{
+    const {createPage}=actions;
     createPage({
         path: `/`,
         component: path.resolve(`./src/pages/Default/index.js`),
@@ -24,13 +25,13 @@ exports.createPages=({boundActionCreators,graphql})=>{
             id: `123456`,
         },
     })
-    createPage({
-        path: `/products/`,
-        component: path.resolve(`./src/pages/Products/products.js`),
-        context: {
-            id: `12345`,
-        },
-    })
+    // createPage({
+    //     path: `/products/`,
+    //     component: path.resolve(`./src/pages/Products/products.js`),
+    //     context: {
+    //         id: `12345`,
+    //     },
+    // })
     createPage({
         path: `/History/`,
         component: path.resolve(`./src/pages/History/History.js`),
@@ -38,13 +39,13 @@ exports.createPages=({boundActionCreators,graphql})=>{
             id: `12345`,
         },
     })
-    createPage({
-        path: `/Cart/`,
-        component: path.resolve(`./src/pages/Cart/Cart.js`),
-        context: {
-            id: `1234`,
-        },
-    })
+    // createPage({
+    //     path: `/Cart/`,
+    //     component: path.resolve(`./src/pages/Cart/Cart.js`),
+    //     context: {
+    //         id: `1234`,
+    //     },
+    // })
     createPage({
         path: `/Reviews/`,
         component: path.resolve(`./src/pages/Reviews/Reviews.js`),
@@ -87,31 +88,39 @@ exports.createPages=({boundActionCreators,graphql})=>{
             id: `7776`,
         },
     })
-    const postTemplate=path.resolve('src/templates/post.js');
-    return graphql(`{
-        allMarkdownRemark{
-            edges{
-                node{
-                    html
-                    id
-                    frontmatter{
-                        path
-                        title
-                    }
+
+    // return new Promise((resolve,reject)=>{
+    const { data } = await graphql(` 
+        query MyQuery {
+            talabarteria {
+                categories {
+                id
+                img
+                titulo
+                products {
+                    price
+                    titulo
+                    imagen
+                }
                 }
             }
         }
-    }`)
-    .then(res=>{
-        if(res.errors){
-            return Promise.reject(res.errors);
-        }
-        res.data.allMarkdownRemark.edges.forEach(({node}) => {
-            createPage({
-                path:node.frontmatter.path,
-                component:postTemplate
-            })
-        });
+          
+    `)
+
+    // const productsTemplate=path.resolve('src/pages/Products/products.js');
+    console.log("=====graphql Query")
+    // console.log(data.talabarteria.categories)
+    data.talabarteria.categories.forEach((category)=>{
+        console.log("====")
+        console.log(category.id)
+        createPage({
+            path:"/products/"+category.titulo,
+            component:path.resolve('src/templates/Products/products.js'),
+            context: {
+                categoryId: category.id,
+                title:category.titulo
+            },
+        })
     })
 }
-

@@ -7,11 +7,32 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options:{
+    //     path:`${__dirname}/src/pages`,
+    //     name:'pages'
+    //   }
+    // },
     {
-      resolve: `gatsby-source-filesystem`,
-      options:{
-        path:`${__dirname}/src/pages`,
-        name:'pages'
+      resolve: "gatsby-source-graphql",
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: "SWAPI",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "talabarteria",
+        // Url to query from
+        url: "http://localhost:3000/graphql/endpoint",
+      },
+    },
+    {
+      // The name of the plugin
+      resolve: 'gatsby-source-mongodb',
+      options: {
+        connectionString:'mongodb+srv://talabarteriaadmin:Admin123@cluster0-z5xed.mongodb.net/talabarteria-db?retryWrites=true&w=majority',
+        // Name of the database and collection where are books reside
+        dbName: 'talabarteria-db',
+        collection: ['categories','products'],
       }
     },
     `gatsby-transformer-remark`,
@@ -20,6 +41,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-168745887-1",
       },
     },
     `gatsby-transformer-sharp`,

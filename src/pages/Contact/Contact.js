@@ -3,7 +3,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"    
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone,faEnvelope,faCalendar } from '@fortawesome/free-solid-svg-icons'
-import {faFacebookF,faWhatsapp,faTwitter} from '@fortawesome/free-brands-svg-icons'
+import {faFacebookF,faTwitter} from '@fortawesome/free-brands-svg-icons'
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker/Marker'
 import 'bootstrap/dist/css/bootstrap.min.css';

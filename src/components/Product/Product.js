@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React from "react"
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
@@ -97,7 +97,7 @@ class Product extends React.Component{
         return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
 
-    handleIncrement=()=>{
+    Increment=()=>{
         console.log("incrementing 1")
         let newqty=this.state.qty+1;
         console.log(newqty)
@@ -106,47 +106,64 @@ class Product extends React.Component{
         });
     }
 
-    handleDecrement(){
+    Decrement=()=>{
         console.log("Decrementing")
-        // if(this.state.qty-1>-1){
-        //     let newqty=this.state.qty--;
-        // }
-
         this.setState({
             qty: this.state.qty-1>-1? this.state.qty-1 : 0
         });
     }
+
+    handleIncrement=()=>{
+       this.Increment();
+    }
+
+    handleKeyIncrement=(event)=>{
+        if(event.keyCode === 13){
+            this.Increment();
+        }
+    }
+
+    handleDecrement(){
+        this.Decrement();
+    }
     
+    handleKeyDecrement=(event)=>{
+        if(event.keyCode === 13){
+            this.Decrement();
+        }
+    }
+
     changeHandler = (name, event) => {
         this.setState({
             qty: event.target.value
         });
     }
-    hoverHandler=()=>{
-        console.log(this.state)
-        this.setState({
-            // hoverState:'productContainer active'
-            hoverState:true 
-        })
-    }
-    hoverExitHandler=()=>{
-        // console.log(this.state)
-        this.setState({
-            // hoverState:'productContainer active'
-            hoverState:false 
-        })
-    }
+    // hoverHandler=()=>{
+    //     console.log(this.state)
+    //     this.setState({
+    //         // hoverState:'productContainer active'
+    //         hoverState:true 
+    //     })
+    // }
+    // hoverExitHandler=()=>{
+    //     // console.log(this.state)
+    //     this.setState({
+    //         // hoverState:'productContainer active'
+    //         hoverState:false 
+    //     })
+    // }
     render() {
         return (
             <div  className='productContainer' 
-                onMouseEnter={this.hoverHandler.bind(this)}
-                onMouseLeave={this.hoverExitHandler.bind(this)}
+                // onMouseEnter={this.hoverHandler.bind(this)}
+                // onMouseLeave={this.hoverExitHandler.bind(this)}
+                // role="menuitem"
             >   
                 <div className="imageContainer">
-                        <Link to={this.props.url}>
-                            <Image src={this.state.img} fluid></Image>
-                        </Link>
-                    </div>
+                    <Link to={this.props.url} tabIndex={(this.props.tabIndex*4)}>
+                        <Image src={this.state.img} fluid></Image>
+                    </Link>
+                </div>
                     <p className="productTitle">{this.state.title}</p>
                     <p className="price">{this.currencyFormat(this.state.cost)}</p>
                     {this.state.cartqty>0 &&
@@ -171,17 +188,17 @@ class Product extends React.Component{
                     } */}
                     <div className="productForm">
                             <div className="qty">
-                                <div className="signs" onClick={this.handleDecrement.bind(this)}>
+                                <div className="signs" role="button" onClick={this.handleDecrement.bind(this)} onKeyDown={this.handleKeyDecrement.bind(this)} tabIndex={(this.props.tabIndex*4)+1}>
                                     <p>-</p>
                                 </div>
                                 <div className="qtyinbox">
                                     <p>{this.state.qty} </p>
                                 </div>
-                                <div className="signs" onClick={this.handleIncrement.bind(this)}>
+                                <div className="signs" role="button" onClick={this.handleIncrement.bind(this)} onKeyDown={this.handleKeyIncrement.bind(this)} tabIndex={(this.props.tabIndex*4)+2}>
                                     <p>+</p>
                                 </div>           
                             </div>
-                        <Button variant="primary" block size="xs" data-id={this.state.id} onClick={this.handleClick}>Buy</Button>
+                        <Button variant="primary" block size="xs" data-id={this.state.id}  tabIndex={(this.props.tabIndex*4)+3} onClick={this.handleClick}>Buy</Button>
                     </div>
                 </div>
         );

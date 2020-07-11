@@ -6,7 +6,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCaretRight, faSearch,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import {faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import "./Policies.scss"
 
 

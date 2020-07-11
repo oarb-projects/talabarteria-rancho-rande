@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import React from "react"
 import Image from 'react-bootstrap/Image'
 import titleImage from "../../Assets/Images/title.png";
-import Collapse from 'react-bootstrap/Collapse'
+// import Collapse from 'react-bootstrap/Collapse'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars, faSearch,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {SlideDown} from 'react-slidedown'

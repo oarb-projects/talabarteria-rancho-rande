@@ -55,7 +55,7 @@ const HistoryPage = () => (
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
         </p>
         <Image src={BusinessImage} className="center-cropped"/>
-        <p className="information">Fabricamos monturas, cintos, riendas, chaparreras, correones, cabezadas, fundas y muchas cosas más🐎. 
+        <p className="information">Fabricamos monturas, cintos, riendas, chaparreras, correones, cabezadas, fundas y muchas cosas más<span role="img" aria-label='horse'>🐎</span>. 
           Reparación en general.
           También contamos con botas camperas y botines, frenos, espuelas, carteras, hebillas, navajas Case, Victorinox, Muela.
           Además, variedad de cuchillos profesionales carniceros y línea doméstica

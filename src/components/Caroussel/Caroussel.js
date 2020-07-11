@@ -12,7 +12,7 @@ function ControlledCarousel(props) {
       setIndex(selectedIndex);
     };
 
-    console.log(props.imgArray)
+    // console.log(props.imgArray)
     return (
     <Carousel activeIndex={index} onSelect={handleSelect} interval={3000}>
         {props.imgArray.map((img, ind) => (
